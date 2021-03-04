@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des favoris - Deez'Web</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <script src="lib/jquery.js"></script>
+    <script src="scripts/functions.js" defer></script>
+    <script src="scripts/favoris.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-info bg-info sticky-top">
+        <a class="navbar-brand" href="#">🎶</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="index.html"><i class="em-svg em-house" aria-role="presentation" aria-label="HOUSE BUILDING"></i> Accueil</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="favoris.html"><i class="em-svg em-heart" aria-role="presentation" aria-label="HEAVY BLACK HEART"></i> Favoris <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-none flex-row align-items-center" id="player-container">
+            <span class="music"></span>
+            <a href="#" class="text-light" title="Écouter sur Deezer.com" target="_blank"><ins>Musique titre</ins></a>
+            <audio controls></audio>
+        </div>
+    </nav>
+
+    <main class="container mt-4 pb-5">
+
+        <h1>Favoris</h1>
+        <hr>
+        
+        <div class="row row-cols-1 row-cols-md-2" id="favorites"></div>
+
+    </main>
+
+</body>
+</html>

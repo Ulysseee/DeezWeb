@@ -1,0 +1,116 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+#player-container audio {
+    max-height: 2em;
+    flex: 3;
+    margin-left: 0.4em;
+}
+#player-container audio:focus {
+    outline: none;
+}
+#player-container audio::-webkit-media-controls-enclosure {
+    border-radius: 0;
+}
+
+.song img {
+    max-width: 256px;
+}
+
+.song {
+    position: relative;
+}
+
+.song .stretched-link {
+    font-size: 0;
+}
+
+.song .fav-button,
+.song .play-button {
+    position: absolute;
+    bottom: 1em;
+    z-index: 2;
+}
+.song .fav-button { right: 1em; }
+.song .play-button { right: 4em; }
+
+.song .play-button::before {
+    content: "\25b6";
+    font-family: Arial, sans-serif;
+    margin-right: 0.33em;
+}
+
+.spinner {
+    margin: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    border: 0.5em solid #f0f0f0;
+    border-top: 0.5em solid #007bff;
+    border-radius: 2em;
+    animation: spinner-rotate 0.66s linear infinite;
+}
+
+@keyframes spinner-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.pulse-once {
+    animation: pulse 350ms 1;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.music,
+.music::before,
+.music::after {
+    width: 0.25em;
+    background-color: #fff;
+    border-radius: 0.25em;
+    transform-origin: 50% 100%;
+}
+.music {
+    height: 1em;
+    margin: 0 1em;
+    position: relative;
+}
+.music::before,
+.music::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+}
+.music::before {
+    height: 0.8em;
+    left: -0.4em;
+}
+.music::after {
+    height: 0.6em;
+    right: -0.4em;
+}
+.music.music-animated {
+    animation: playing 650ms infinite;
+}
+.music.music-animated::before {
+    animation: playing 650ms 500ms infinite;
+}
+.music.music-animated::after {
+    animation: playing 650ms 250ms infinite;
+}
+@keyframes playing {
+    25% { transform: scaleY(1.2); }
+    75% { transform: scaleY(0.8); }
+}
